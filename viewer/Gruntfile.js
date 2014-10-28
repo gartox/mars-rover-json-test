@@ -77,7 +77,7 @@ module.exports = function (grunt) {
         cmd: 'AWS_ACCESS_KEY=DummyAccessKey AWS_SECRET_ACCESS_KEY=DummySecretKey DYNAMODB_ENDPOINT=http://localhost:8000 DYNAMODB_REGION=us-east-1 coffee ./lib/random_votes.coffee'
       },
       installIngester: {
-        cmd: 'mvn -Dmaven.test.skip=true install',
+        cmd: 'mvn install -Dmaven.test.skip=true',
         execOpts: {
           cwd: '<%= ingester.src %>'
         }

@@ -7,6 +7,8 @@ AWS.config.credentials = new AWS.Credentials (
 	secretAccessKey: nconf.get('AWS_SECRET_ACCESS_KEY')
 )
 
+
+
 dynamoDB = new DOC.DynamoDB(
 	new AWS.DynamoDB(
 		endpoint: nconf.get('DYNAMODB_ENDPOINT')
