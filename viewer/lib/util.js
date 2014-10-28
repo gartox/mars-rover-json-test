@@ -4,7 +4,7 @@
 
   AWS = require('aws-sdk');
 
-  DOC = require('dynamodb-doc');
+  DOC = require('../app/scripts/dynamodb-doc/dynamodb-doc');
 
   nconf = require('./mynconf');
 

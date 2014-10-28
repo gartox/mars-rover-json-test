@@ -4,7 +4,7 @@ nconf.argv()
 	 .env()
 
 nconf.defaults
-	DYNAMODB_ENDPOINT_DEV: 'http://localhost:8000/dynamodb/'
+	DYNAMODB_ENDPOINT_DEV: 'http://localhost:9000/dynamodb/'
 	DYNAMODB_REGION_DEV: 'us-east-1'
 	USE_COGNITO_DEV: false
 	DYNAMODB_ENDPOINT_TEST: 'http://localhost:8080/dynamodb/'

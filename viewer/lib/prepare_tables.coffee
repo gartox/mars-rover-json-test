@@ -8,7 +8,7 @@ tables = [
             { AttributeName: 'imageid', AttributeType: 'S' }     
     		{ AttributeName: 'Mission+InstrumentID', AttributeType: 'S' }
             { AttributeName: 'TimeStamp', AttributeType: 'N' }
-    		 { AttributeName: 'votes', AttributeType: 'N' }		
+    		 { AttributeName: 'votes', AttributeType: 'S' }		
     	]
     	KeySchema: [
     		{ AttributeName: 'imageid', KeyType: 'HASH' }
@@ -21,8 +21,7 @@ tables = [
                     {AttributeName: 'TimeStamp', KeyType: 'RANGE' }
                 ]
                 Projection:
-                    ProjectionType: 'INCLUDE'
-                    NonKeyAttributes: [ 'url', 'time', 'instrument', 'votes', 'mission' ]
+                    ProjectionType: 'ALL'
                 ProvisionedThroughput: 
                 	ReadCapacityUnits: nconf.get('READ_CAPACITY_PHOTOS')
                 	WriteCapacityUnits: nconf.get('WRITE_CAPACITY_PHOTOS')
@@ -34,8 +33,7 @@ tables = [
                     {AttributeName: 'votes', KeyType: 'RANGE' }
                 ]
                 Projection:
-                    ProjectionType: 'INCLUDE'
-                    NonKeyAttributes: [ 'url', 'time', 'instrument', 'TimeStamp', 'mission' ]
+                    ProjectionType: 'ALL'
                 ProvisionedThroughput: 
                 	ReadCapacityUnits: nconf.get('READ_CAPACITY_PHOTOS')
                 	WriteCapacityUnits: nconf.get('WRITE_CAPACITY_PHOTOS')

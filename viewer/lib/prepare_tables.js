@@ -21,7 +21,7 @@
           AttributeType: 'N'
         }, {
           AttributeName: 'votes',
-          AttributeType: 'N'
+          AttributeType: 'S'
         }
       ],
       KeySchema: [
@@ -43,8 +43,7 @@
             }
           ],
           Projection: {
-            ProjectionType: 'INCLUDE',
-            NonKeyAttributes: ['url', 'time', 'instrument', 'votes', 'mission']
+            ProjectionType: 'ALL'
           },
           ProvisionedThroughput: {
             ReadCapacityUnits: nconf.get('READ_CAPACITY_PHOTOS'),
@@ -62,8 +61,7 @@
             }
           ],
           Projection: {
-            ProjectionType: 'INCLUDE',
-            NonKeyAttributes: ['url', 'time', 'instrument', 'TimeStamp', 'mission']
+            ProjectionType: 'ALL'
           },
           ProvisionedThroughput: {
             ReadCapacityUnits: nconf.get('READ_CAPACITY_PHOTOS'),

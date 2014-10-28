@@ -1,13 +1,11 @@
 AWS = require('aws-sdk')
-DOC = require('dynamodb-doc')
+DOC = require('../app/scripts/dynamodb-doc/dynamodb-doc')
 nconf = require('./mynconf')
 
 AWS.config.credentials = new AWS.Credentials (
 	accessKeyId: nconf.get('AWS_ACCESS_KEY')
 	secretAccessKey: nconf.get('AWS_SECRET_ACCESS_KEY')
 )
-
-
 
 dynamoDB = new DOC.DynamoDB(
 	new AWS.DynamoDB(
